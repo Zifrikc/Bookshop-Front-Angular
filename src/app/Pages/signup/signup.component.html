@@ -1,0 +1,107 @@
+<div class="container mt-4 mb-3">
+  <div class="row featurette">
+    <div class="col-md-5">
+      <div class="card card-cover h-100 overflow-hidden text-white  rounded-3 shadow-lg img">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h2 class="fs-3 pt-6 mt-5 mb-4 display-6 lh-1 fw-bold text-dark text-center fw-josefin"
+            style="letter-spacing: 4px;"><b>La quinta esfera</b></h2>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <img src="" alt="" width="" height="" class="rounded-circle border border-white">
+            </li>
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#geo-fill" />
+              </svg>
+              <small></small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#calendar3" />
+              </svg>
+              <small></small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-7 position-static0 d-block rounded-2 shadow" style="border:1px solid rgb(114, 103, 103);">
+      <div class="container mt-3" style="margin-bottom: 30px">
+        <h1 class="fs-2 text-center pt-6 mt-5 mb-4  lh-1 fw-bold text-dark fw-viaoda">Registrarse en The Secret of the
+          Asius</h1>
+        <form class="" (ngSubmit)="formSubmit()">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label class="fw-josefin">Nombre de usuario</mat-label>
+            <input matInput placeholder="Ingresar su nombre de usuario" class="fw-josefin" required
+              [(ngModel)]="user.username" name="username">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label class="fw-josefin">Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Ingresar su contraseña" required
+              [(ngModel)]="user.password" name="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label class="fw-josefin">Nombre</mat-label>
+                <input matInput placeholder="Ingresar su nombre" class="fw-josefin" required [(ngModel)]="user.nombuser"
+                  name="nombuser">
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label class="fw-josefin">Ingrese su Apellido</mat-label>
+                <input matInput placeholder="Ingresar su nombre" class="fw-josefin" required
+                  [(ngModel)]="user.apelliuser" name="apelliuser">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label class="fw-josefin">Email</mat-label>
+            <input matInput placeholder="example@gmail.com" class="fw-josefin" required [(ngModel)]="user.emailuser"
+              name="emailuser">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label class="fw-josefin">Telefono (+51)</mat-label>
+            <input matInput placeholder="Ingrese su telefono" class="fw-josefin" required [(ngModel)]="user.telefuser"
+              name="telefuser" #postalCode maxlength="9">
+          </mat-form-field>
+
+
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Ocupacion</mat-label>
+            <mat-select required [(ngModel)]="user.perfiluser" name="perfiluser">
+              <mat-option value="Lector">Lector</mat-option>
+              <mat-option value="Escritor">Escritor</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="text-center">
+            <button type="submit" mat-fab extended color="secondary" class="w-100 fw-viaoda mb-2">
+              Guarddar
+            </button>
+
+            <button type="button" (click)="exit()" mat-fab extended color="warn" class="w-100">
+              Cancelar
+            </button>
+          </div>
+        </form>
+        <br><br>
+        <hr class="my-4">
+      </div>
+    </div>
+
+  </div>
+</div>

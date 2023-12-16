@@ -1,0 +1,65 @@
+<div class="container grid-margin stretch-card  mt-2">
+    <nav aria-label="breadcrumb ">
+        <ol class="breadcrumb mt-3 ">
+            <li class="breadcrumb-item active fw-semibold  fs-2 fw-kau "><a>Admin</a></li>
+            <li class="breadcrumb-item fs-4 fw-bold fw-viaoda fw-kau" >Usuarios</li>
+        </ol>
+    </nav>
+    <div class="">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                <h3 class="card-title fw-viaoda fw-bold fs-3 pt-3">Registro de usuarios</h3>
+            </div>
+            <div class="col d-flex flex-row-reverse">
+                <div class="p-2"><i class="bi bi-trash fs-4"></i></div>
+                <div class="p-2"><i class="bi bi-chevron-double-down fs-4"></i></div>
+                <div class="p-2"><i class="bi bi-chevron-double-up fs-4"></i></div>
+                <div class="p-2"><i class="bi bi-arrow-clockwise fs-4"></i></div>
+                <div class="p-2"><i class="bi bi-plus-lg fs-4"></i></div>
+            </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="fw-josefin fs-5">#</th>
+                        <th class="fw-josefin fs-5">Usuario</th>
+                        <th class="fw-josefin fs-5">Nombre</th>
+                        <th class="fw-josefin fs-5"> Apellido</th>
+                        <th class="fw-josefin fs-5">Username</th>
+                        <th class="fw-josefin fs-5">Correo</th>
+                        <th class="fw-josefin fs-5">Perfil</th>
+                        <th class="fw-josefin fs-5">Editar</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let i of usuarios" >
+                <tr >
+                    <td>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </td>
+                    <td>
+                        <figure>
+                            <img class="rounded-pill" src="{{i.img}}" width="30px" height="30px">
+                        </figure>
+                    </td>
+                    <td>{{ i.nombuser }}</td>
+                    <td>{{ i.apelliuser }}</td>
+                    <td>{{ i.username }}</td>
+                    <td>{{ i.emailuser }}</td>
+                    <td>{{ i.perfiluser }}</td>
+                    <td>
+                        <button mat-raised-button type="submit" class=" btn btn-success pull-right mute ">Editar</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <mat-paginator [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]"
+                    aria-label="Select page">
+        </mat-paginator>
+    </div>
+</div>

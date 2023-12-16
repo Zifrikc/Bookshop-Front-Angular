@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list class="text-center">
+      <h1 class="fs-4 fw-semibold text-center mt-2  fw-baby  ">Panel administrativo</h1>
+      <li class="border-top my-3"></li>
+      <a mat-list-item  routerLink="/admin"><i class="bi bi-house  fs-5"></i> Inicio</a>
+      <a mat-list-item routerLink = "/admin/perfil"><i class="bi bi-person  fs-5"></i> Perfil</a>
+      <a mat-list-item routerLink = "/admin/view-users"><i class="bi bi-people fs-5"></i> Usuarios</a>
+      <a mat-list-item [matMenuTriggerFor]="books"><i class="bi bi-journal fs-5"></i> Libros</a>
+      <mat-menu #books="matMenu" xPosition="before">
+        <button mat-menu-item routerLink = "/admin/view-books" class="fw-josefin">Libros registrados</button>
+        <button mat-menu-item routerLink = "/admin/add-books" class="fw-josefin">Agregar nuevo libro</button>
+      </mat-menu>
+      <a mat-list-item ><i class="bi bi-calendar-event fs-5" ></i> Eventos</a>
+      <a mat-list-item ><i class="bi bi-bag-check fs-5" ></i> Ventas</a>
+      <a mat-list-item ><i class="bi bi-bar-chart-line fs-5"></i> Estadisticas</a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

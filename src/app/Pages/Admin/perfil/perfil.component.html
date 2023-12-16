@@ -1,0 +1,66 @@
+<div class="container mt-2">
+  <nav aria-label="breadcrumb ">
+      <ol class="breadcrumb mt-3 ">
+          <li class="breadcrumb-item active fw-semibold  fs-2 fw-kau "><a>Admin</a></li>
+          <li class="breadcrumb-item fs-4 fw-bold fw-viaoda fw-kau" >Perfil</li>
+      </ol>
+  </nav>
+
+  <div class="row">
+      <div class="col-md-4">
+          <div class="card card-profile text-center">
+              <div class="card-avatar">
+                  <div class="figure mt-2">
+                      <img class="img rounded-circle" src="{{user.img}}" alt="" width="180" height="180px" />
+                  </div>
+              </div>
+              <div class="card-body">
+                  <h5 class="card-category"><p class="fw-lighter  disabled text-center fw-josefin fs-4 fw-bolder">  {{user.authorities[0].authority}}</p></h5>
+                  <h4 class="card-title text">{{user.nombuser}}</h4>
+                  <p class="card-description ">
+                  "Como administrador de la web, eres el responsable de mantener el sitio en funcionamiento y brindar una excelente experiencia al usuario. ¡Tu trabajo es crucial para el éxito de nuestra presencia en línea!"                      </p>
+                  <a  class="btn w-50 rounded-5">Editar</a>
+              </div>
+          </div>
+      </div>
+
+  <div class="col-md-8">
+      <mat-card class="example-card">
+          <mat-card-header>
+              <mat-card-title class="fs-4 fw-josefin">Detalles</mat-card-title>
+          </mat-card-header>
+      <mat-card-content>
+          <form class="example-form">
+              <mat-form-field class="example-full-width ">
+                  <mat-label class="text-dark fs-5 fw-josefin">Nombre</mat-label>
+                  <input matInput  value=" {{user.nombuser}}" disabled>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width ">
+                  <mat-label class="text-dark fs-5 fw-josefin">Apellidos</mat-label>
+                  <input matInput  value=" {{user.apelliuser}}" disabled>
+              </mat-form-field>
+              <mat-form-field class="example-full-width ">
+                  <mat-label class="text-dark fs-5 fw-josefin">Correo electronico</mat-label>
+                  <input matInput  value=" {{user.emailuser}}" disabled>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width ">
+                  <mat-label class="text-dark fs-5 fw-josefin">Numero de telefono</mat-label>
+                  <input matInput value=" {{user.telefuser}}" disabled>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width ">
+                  <mat-label class="text-dark fs-5 fw-josefin">Perfil</mat-label>
+                  <input matInput  value=" {{user.perfiluser}}" disabled>
+              </mat-form-field>
+          </form>
+      </mat-card-content>
+
+          <mat-card-actions class="ms-auto p-2">
+              <button mat-button>EDITAR</button>
+          </mat-card-actions>
+      </mat-card>
+      </div>
+  </div>
+</div>

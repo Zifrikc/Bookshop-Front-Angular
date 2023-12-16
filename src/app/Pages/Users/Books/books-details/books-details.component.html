@@ -1,0 +1,111 @@
+<div class="container mt-3">
+    <div class="row ">
+        <div class="col-md-3 ">
+            <img src="{{libro.img}}" alt="Imagen del libro" width="250" height="420">
+        </div>
+        <div class="col-md-6">
+            <h1 class="fs-2 fst-italic fw-bold fw-viaoda">{{libro.nombre}}</h1>
+
+            <div class="col d-flex">
+                <div class="col-md-4">
+                    <p class=" fs-4  fw-viaoda">By: {{libro.autor}}</p>
+                </div>
+
+                <div class="col-md-4">
+                    <p class=" fs-4 fw-viaoda"> {{libro.editorial}}</p>
+                </div>
+
+                <div class="col-md-4">
+                    <p class=" fs-4 fw-viaoda"> {{libro.publicacion}}</p>
+                </div>
+            </div>
+
+            <h3 class="fw-bold fs-4 fw-viaoda">Sinopsis</h3>
+            <div class=" mb-3 fw-josefin fs-5">{{libro.sinopsis}}</div>
+
+            <div class="col d-flex ">
+                <div class="col-md-4 d-flex">
+                </div>
+
+                <div class="col-md-4 d-flex">
+                </div>
+
+                <div class="col-md-4 d-flex">
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-md-3 py-3">
+            <div class="comprar">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row d-flex">
+                            <div class="col-md-6">
+                                <p class="fw-bold px-2 fst-italic fw-kau">{{libro.estado}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="px-2 fw-baby fw-bold">S/{{libro.costo}}</p>
+                            </div>
+
+                        </div>
+                        <h1 class="card-title fw-baby fw-bold fs-2">Descripción</h1>
+                        <div class="details">
+                            <div class="row">
+                                <div class="col d-flex fw-josefin">
+                                    <p class="fs-5">Genero:</p>
+                                    <p class="px-2">{{libro.genero}}</p>
+                                </div>
+
+
+                                <div class="col d-flex fw-josefin">
+                                    <p class="fs-5">Idioma:</p>
+                                    <p class="px-2">{{libro.idioma}}</p>
+                                </div>
+
+
+                                <div class="col d-flex fw-josefin">
+                                    <p class=" fs-5 ">ISBN:</p>
+                                    <p class=" px-2">{{libro.isbn}}</p>
+                                </div>
+
+                                <div class="col d-flex fw-josefin">
+                                    <p class=" fs-5">Paginas:</p>
+                                    <p class="px-2">{{libro.paginas}}</p>
+                                </div>
+
+
+                                <div class="col d-flex fw-josefin">
+                                    <p class="fs-5">Formato:</p>
+                                    <p class=" px-2">{{libro.formato}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="pb-2 border-bottom"></h2>
+                    <div class="button text-center">
+                        <button class="btn btn-outline-secondary pull-right mb-3">Agregar al carrito</button>
+                        <button *ngFor="let i of books" [routerLink]="['/user/books-buy']"
+                            [queryParams]="{id: i.idBooks}" class="btn btn-outline-danger text-dark mb-3">Comprar
+                            ahora</button>
+
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" mat-fab extended color="secondary" class="w-100 fw-viaoda mb-2">
+                            Agregar al carrito
+                        </button>
+
+                        <button type="button" mat-fab extended color="warn" class="w-100 fw-viaoda"
+                            *ngFor="let i of books" [routerLink]="['/user/books-buy']" [queryParams]="{id: i.idBooks}">
+                            Comprar ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>

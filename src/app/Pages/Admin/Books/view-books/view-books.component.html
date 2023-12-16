@@ -1,0 +1,61 @@
+<div class="container">
+    <nav aria-label="breadcrumb ">
+        <ol class="breadcrumb mt-3 ">
+            <li class="breadcrumb-item active fw-semibold  fs-2 fw-kau "><a>Admin</a></li>
+            <li class="breadcrumb-item fs-4 fw-bold fw-viaoda fw-kau">Editar</li>
+        </ol>
+    </nav>
+    <div class="card mb-3" *ngFor="let i of books">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="{{i.img}}" class="img-fluid rounded-start">
+                <div class=" text-center pt-1">
+                    <p class="fw-josefin fw-bolder"> <strong>Paginas: </strong>{{i.paginas}}</p>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="card-body">
+                    <div class="d-flex ">
+                        <h4 class="p-2 fw-bold fw-josefin">{{i.nombre}}</h4>
+                        <p class="p-2 ms-auto fst-italic fw-josefin text-uppercase">{{i.genero}}</p>
+                        <p class="ms-auto p-2 fw-bold fw-josefin">{{i.autor}}</p>
+
+                    </div>
+                    <p class="px-2 text-justify fw-josefin"><strong class="">Sinopsis: </strong>{{i.sinopsis}}</p>
+
+                    <div class="row px-2 mb-2">
+                        <div class="col fw-josefin"><strong>Editorial: </strong>{{i.editorial}}</div>
+                        <div class="col fw-josefin"><strong>Año de publicacion: </strong>{{i.publicacion}}</div>
+                        <div class="col fw-josefin"><strong>Formato: </strong>{{i.formato}}</div>
+                    </div>
+
+                    <div class="row px-2 mb-2">
+                        <div class="col fw-josefin"><strong>Documento: </strong>{{i.documento}}</div>
+
+                    </div>
+
+                    <div class="row px-2 mb-2">
+                        <div class="col fw-josefin"><strong>ISBN: </strong>{{i.isbn}}</div>
+                        <div class="col fw-josefin"><strong>Idioma: </strong>{{i.idioma}}</div>
+                        <div class="col fw-josefin"><strong>Estado: </strong>{{i.estado}}</div>
+                    </div>
+
+                    <div class="d-flex fw-josefin">
+                        <div class="p-2 fw-bold fw-josefin"><button type="button" class="btn btn-outline-success"
+                                [routerLink]="['/admin/edit-books']" [queryParams]="{id: i.idBooks}">
+                                <i class="bi bi-pen"></i> Editar</button>
+                        </div>
+
+                        <div class="p-2 fw-bold">
+                            <button type="button" class="btn btn-outline-danger fw-josefin"
+                                (click)="eliminarEventoPorId(i.idBooks)">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </div>
+                        <div class="ms-auto p-2 fw-josefin fs-5"><strong class="fw-bold">Costo: </strong>S/{{i.costo}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

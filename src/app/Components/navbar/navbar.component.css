@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+.fw-josefin{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.dropdown-menu a:hover{
+  background-color: #79858f;
+}
